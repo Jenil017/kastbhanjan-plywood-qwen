@@ -1,0 +1,16 @@
+name = "kp2-api"
+main = "worker/index.ts"
+compatibility_date = "2024-01-01"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+# JWT_SECRET must be set in production
+# TURSO_DATABASE_URL and TURSO_AUTH_TOKEN must be set
+
+[[databases]]
+binding = "TURSO_DB"
+database_name = "kp2-db"
+database_id = "your-database-id"
+
+[env.production]
+# Production environment variables should be set via Cloudflare dashboard or wrangler secrets
